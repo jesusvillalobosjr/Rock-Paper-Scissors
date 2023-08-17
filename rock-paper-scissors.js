@@ -15,7 +15,45 @@ function playRound(playerSelection,computerSelection){
     let playerIndex = gameChoices.indexOf(playerSelection);
     let computerIndex = gameChoices.indexOf(computerSelection);
 
-    let result = (computerIndex === indexOfLoss(playerIndex)) ? `Computer Wins! ${gameChoices[computerIndex]} beats ${gameChoices[playerIndex]}` : (playerIndex === indexOfLoss(computerIndex)) ? `Player Wins! ${gameChoices[playerIndex]} beats ${gameChoices[computerIndex]}` : `It's a Tie!`;
+    let result = (computerIndex === indexOfLoss(playerIndex)) ? -1 : (playerIndex === indexOfLoss(computerIndex)) ? 1 : 0;
+    return result;
+}
+
+function game(){
+    let playerScore = 0;
+    let computerScore = 0;
+    let message;
+
+    while(playerScore != 5 && computerScore != 5){
+        console.log(`Player:${playerScore}`);
+        console.log(`Computer:${computerScore}`);
+        let playerChoice;
+        do{
+            playerChoice = prompt("Rock, Paper, or Scissors?");
+            if(playerChoice == null)
+                return;
+            playerChoice = formatWord(playerChoice);
+        }while(!gameChoices.includes(playerChoice));
+
+        let computerChoice = getComputerChoice();
+
+        let result = playRound(playerChoice,computerChoice);
+        if(result === 1){
+            message = `Player Wins! ${playerChoice} beats ${computerChoice}`;
+            console.log(message);
+            playerScore++;
+        }else if(result == -1){
+            message = `Computer Wins! ${computerChoice} beats ${playerChoice}`
+            console.log(message);
+            computerScore++;
+        }else{
+            message = `It's a Tie!`;
+            console.log(message);
+        }
+    }
+
+    let winner = (playerScore === 5) ? 'Player' : 'Computer';
+    console.log(`${winner} is the winner!`);
 }
 
 function formatWord(word){
@@ -29,3 +67,5 @@ function formatWord(word){
 function indexOfLoss(index){
     return (index + 1) % gameChoices.length;
 }
+
+game();

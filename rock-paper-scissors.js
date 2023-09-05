@@ -68,4 +68,11 @@ function indexOfLoss(index){
     return (index + 1) % gameChoices.length;
 }
 
-game();
+const startButton = document.querySelector("#start");
+const startPage = document.querySelector("#start-page");
+
+function startGame(){
+    startPage.style.cssText = "display : none;";
+}
+
+startButton.addEventListener("click",startGame);

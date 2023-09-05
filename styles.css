@@ -1,0 +1,37 @@
+*{
+    font-family: 'Rajdhani', sans-serif;
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+.start-page{
+    background-color: #005073;
+    color: white;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-selection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-selection .start{
+    display: inline-block;
+    height: 40px;
+    width: 150px;
+    background-color: #005073;
+    color: white;
+    border-color: white;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

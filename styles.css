@@ -11,7 +11,7 @@ html,body{
     background-color: #005073;
     color: white;
     height: 100vh;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -34,4 +34,104 @@ html,body{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 500ms;
+}
+
+.title-selection .start:hover{
+    cursor: pointer;
+    color: black;
+    background-color: #F4FDFF;
+    border-color: black;
+}
+
+.game{
+    background-color: #005073;
+    height: 100vh;
+    color: white;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.game .game-title{
+    margin-top: 0;
+    text-align: center;
+}
+
+.game .scores{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game .options{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.game .options button{
+    display: inline-block;
+    height: 50px;
+    width: 100px;
+    font-size: 18px;
+    transition: all 500ms;
+    background-color: #005073;
+    color: white;
+    border-color: white;
+}
+
+.game .options button:hover{
+    cursor: pointer;
+    background-color: #F4FDFF;
+    border-color: black;
+    color: black;
+    transform: scale(1.2);
+}
+
+.game .choices{
+    display: flex;
+    justify-content: space-around;
+}
+
+.game .game-result{
+    text-align: center;
+}
+
+.announcement{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.announcement .pop-up{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #8C92AC;
+    height: 50%;
+    width: 50%;
+}
+
+.announcement .pop-up .announcement-text{
+    margin: 0;
+    position: absolute;
+    top: 80px;
+}
+
+.announcement .pop-up .reset{
+    display: inline;
+    height: 50px;
+    width: 100px;
+    font-size: 18px;
 }
